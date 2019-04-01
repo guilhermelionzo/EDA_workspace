@@ -3,9 +3,9 @@
 #include <string.h>
 #include <stdbool.h>
 
-#define BUFFERSIZE 10000
+#define BUFFERSIZE 1000
 
-#define DEBUG_SESSION 0
+#define DEBUG_SESSION 1
 
 #ifdef DEBUG_SESSION
     #define PRINT 1
@@ -15,57 +15,32 @@
     #define PRINT 0
 #endif
 
-//
+
 char* getUserInput(void);
 
 void rot13( char * str );
 
+char* pReplace(char*string);
+
 int main() {
 
-	char buffer[BUFFERSIZE];
 
-    while(fgets(buffer, BUFFERSIZE , stdin)!=NULL)
+
+    while(1)
     {
-        int i,flagLoop=0;
-        int j=0;
+        //char* inputString=(char*)malloc(BUFFERSIZE);
+        char* aux=(char*)malloc(BUFFERSIZE);
+        //fgets(inputString, BUFFERSIZE , stdin);
+        char* inputString = getUserInput();
 
-        char* aux=(char*)calloc(1,BUFFERSIZE);
+        if(inputString==0){break;}
 
-        char* inputString = buffer;//getUserInput();
+        aux=pReplace(inputString);
+        //if(inputString==0){break;} // REACH THE EOF CASE
 
-        if(inputString==0){break;}  // REACH THE EOF CASE
+        //printf("%s\n",inputString);
 
-        if(DEBUG_SESSION){inputString ="pHpzp pfprpepvpnpqpbp pyprptpnpy";}
-
-        for(i=0;i<strlen(inputString);i++){
-            if(inputString[ i ]==' '){
-
-                aux[j]=' ';
-                j++;
-                flagLoop=0;
-
-            }else{
-                if(flagLoop){
-                    aux[j]=inputString[ i ];
-                    j++;
-                    flagLoop=0;
-                }else{
-                    flagLoop=1;
-                }
-    		}
-        }
-
-        if(DEBUG_SESSION){printf("%s\n",aux);}
-
-        rot13(aux); // STRING ROTATION
-        if(aux[strlen(aux)-1]=='\n'){
-            printf("%s\n",aux);
-        }else{
-            printf("%s\n",aux);
-        }
-
-
-        //free(inputString);
+        free(inputString);
     }
 
     return 0;
@@ -79,15 +54,11 @@ char* getUserInput(void){
 
     char* inputValue=(char*)malloc(BUFFERSIZE); //ALOCATE A SPACE ON MEMORY
 
-    char buffer[BUFFERSIZE];
+    char* buffer[BUFFERSIZE];
 
     if(DEBUG_SESSION){printf("Enter a message: \n");}
 
-    fgets(buffer, BUFFERSIZE , stdin);
-
     if(!fgets(buffer, BUFFERSIZE , stdin)){return 0;} // EOF return -1
-
-    buffer[strlen(buffer)-1]='\0';
 
     strcpy(inputValue,buffer);
 
@@ -95,7 +66,7 @@ char* getUserInput(void){
 }
 
 void rot13( char * str )
-{
+    {
         int i = 0;
 
         /* You do this until you find a '\0' */
@@ -112,4 +83,41 @@ void rot13( char * str )
                     (*( str + i ) >= 'N' && *( str + i ) <= 'Z'))   //UPPERCASE
                 *( str + i ) -= 13;
         }
+}
+
+char* pReplace(char*string){
+
+    int length = (int)strlen(string);
+    printf("%d\n", length);
+	char* outPutChar  =(char*)malloc(BUFFERSIZE);
+
+	int flagLoop =1;
+
+    int j=0;
+    int i=0;
+
+	printf("%s\n", string);
+
+	for( i = 0; i<length; i++ ){
+    {
+        printf("%d:%c\n",i,string[ i ]);
+
+    	/*if(string[ i ]==' '){
+    		outPutChar[j]=' ';
+    		j++;
+    	}else{
+    		if(flagLoop){
+    			outPutChar[j]=string[ i ];
+    			j++;
+    			flagLoop=0;
+    		}else{
+    			flagLoop=1;
+    		}
+
+        }*/
+    }
+    //printf("%s\n",outPutChar);
+    return outPutChar;
+    //strncpy(string,outPutChar,sizeof(outPutChar));
+}
 }
