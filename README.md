@@ -1,2 +1,2 @@
 # EDA_workspace
-Repository used to control my codes on the Data Structure Class
+Repository used to control my codes in Data Structure Class
