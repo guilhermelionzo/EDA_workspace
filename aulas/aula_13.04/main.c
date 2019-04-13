@@ -67,7 +67,8 @@ int main()
                 printf("ERROR!\nSystem exceed the memory limit");
                 exit(EXIT_FAILURE);         // finish immediately the code
             }
-
+    at the end of the code we need to clear the memory space.
+            free(ptr);
     */
 
     return 0;
