@@ -21,6 +21,7 @@ int main()
 
 
     //SECOND PART OF THE CLASS
+    /*
     int b[5] = {1,2,3,4,5};
     int i;
     int *bPtr;
@@ -37,6 +38,21 @@ int main()
 
     for(i=0;i<5;i++)
         printf("bPtr[%d] = %d\n", i,bPtr[i]);
+    */
+
+    //THIRD PART OF THE CLASS
+    int var;
+    char *ptr;
+    ptr = &var;
+
+    ptr[0] = 's';
+    ptr[1] = 'o';
+    ptr[2] = 'l';
+    ptr[3] = '\0';
+
+    printf("%s ... var = %d\n\n",(char*)ptr,var);       // print the value in ASCII and the value in decimal(little endian)
+    var = var+2;                                        // jump the 's' to 'u' | ptr[0] = 73 +2;
+    printf("%s ... var = %d\n\n",(char*)ptr,var);       // print the value in ASCII and the value in decimal(little endian)
 
     return 0;
 }
