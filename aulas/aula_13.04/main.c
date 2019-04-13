@@ -41,6 +41,7 @@ int main()
     */
 
     //THIRD PART OF THE CLASS
+    /*
     int var;
     char *ptr;
     ptr = &var;
@@ -53,6 +54,21 @@ int main()
     printf("%s ... var = %d\n\n",(char*)ptr,var);       // print the value in ASCII and the value in decimal(little endian)
     var = var+2;                                        // jump the 's' to 'u' | ptr[0] = 73 +2;
     printf("%s ... var = %d\n\n",(char*)ptr,var);       // print the value in ASCII and the value in decimal(little endian)
+    */
+    //FOURFTH PART OF THE CLASS
+    /*there is two ways to allocate memory
+    -static: variable declaration
+            char c;
+    -dynamic: use pointers
+            char *ptr;
+            ptr = malloc(1);                // alocate one byte
+
+            if(ptr == NULL){                //certificating that the ptr isn't allocated as NULL.
+                printf("ERROR!\nSystem exceed the memory limit");
+                exit(EXIT_FAILURE);         // finish immediately the code
+            }
+
+    */
 
     return 0;
 }
