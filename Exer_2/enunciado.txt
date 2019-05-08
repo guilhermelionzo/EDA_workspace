@@ -1,0 +1,47 @@
+O objetivo do presente trabalho ´e utililzar os conceitos vistos de fila em vetores para um 
+primeiro contato com a estrutura. Para tanto,
+
+(a) Implemente uma biblioteca de filas de inteiro com vetores. Salve sua biblioteca no arquivofonte
+fila_int.c e no arquivo-interface fila_int.h (use o que vimos em sala de aula).
+
+(b) Implemente um terceiro arquivo-fonte que fa¸ca as seguintes opera¸c˜oes:
+  1. Inserir n elementos na fila.
+  2. Remover n elementos na fila.
+  3. Reiniciar a fila.
+  4. Imprimir a fila.
+  5. Sair.
+
+(c) Nas opera¸c˜oes
+  1. Vocˆe deve perguntar ao usu´ario quantos elementos devem ser inseridos exibindo
+  a mensagem “Digite quantos elementos voc^e deseja inserir: ”, ou algo do
+  tipo. Garanta que o elemento inserido est´a entre 0 e 999. Cuidado: Insira
+  elementos enquanto couberem na fila. Caso a fila n˜ao tenha espa¸co suficiente, insira
+  os que couberem e ao final avise o usu´ario quantos elementos n˜ao couberam na fila.
+  2. Vocˆe deve perguntar ao usu´ario quantos elementos devem ser removidos exibindo
+  a mensagem “Digite quantos elementos voc^e deseja remover: ”, ou algo do
+  tipo. Para cada remo¸c˜ao, imprima algo do tipo “Elemento removido: xxx ”.
+  Cuidado: Remova elementos enquanto houver na fila. Caso a fila n˜ao possua mais
+  elementos, remova o m´aximo poss´ıvel e ao final avise ao usu´ario que n˜ao ´e poss´ıvel
+  mais remover pois a fila ficou vazia.
+  3. Use a fun¸c˜ao adequada da sua biblioteca.
+  4. Implemente essa fun¸c˜ao no m´odulo fila_int.c. Essa fun¸c˜ao deve imprimir o vetor
+  fila int completo, da seguinte forma:
+  -----------------------------------------------------------
+  | xxx | xxx | xxx | xxx | xxx | xxx | xxx | xxx | xxx | xxx |
+  -----------------------------------------------------------
+    p            u
+    N˜ao esque¸ca de indicar as posi¸c˜oes de p e u. Procure imprimir exatamente
+    como este exemplo, substituindo xxx pelos elementos que estiverem na respectiva
+    posi¸c˜ao do vetor.
+
+(d) Observa¸c˜oes
+    1. Na sua biblioteca, defina o tamanho da fila como 10, ou seja, use #define N 10.
+    2. A fun¸c˜ao para imprimir a fila n˜ao faz parte da estrutura de dados. Serve apenas
+    para esse exerc´ıcio e para vocˆe ver o que est´a acontecendo com sua fila.
+    3. Atente-se para usar apenas as fun¸c˜oes da sua biblioteca para manipular os dados da
+    fila.
+    4. No arquivo fonte que realiza as 5 opera¸c˜oes do item (b), exiba um menu. Ao fi-
+    nal de executar cada escolha do usu´ario, limpe a tela (use system("clear") ou
+    system("cls")).
+    5. Teste bem seu programa. Certifique-se que vocˆe n˜ao remover´a da fila se ela estiver
+    vazia ou inserir´a na fila se estiver cheia.
