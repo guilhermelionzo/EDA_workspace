@@ -26,6 +26,8 @@ int main(void){
     //read the use user choice
     scanf("%d",&intBuffer);
 
+    system("cls");
+
     //Inserir n elementos na fila.
     if(intBuffer==1){
 
