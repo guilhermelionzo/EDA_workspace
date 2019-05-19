@@ -1,13 +1,13 @@
-#include <stdio.h> 
-#include "fila_int.h" 
+#include <stdio.h>
+#include "fila_int.h"
 #define N 100
 
 static int fila_int[N];
-static int p, u; 
+static int p, u;
 
 void cria_fila_int() {
-  p = 0; 
-  u = 0; 
+  p = 0;
+  u = 0;
 }
 
 void enfileira_int(int y) {
@@ -26,5 +26,40 @@ int fila_int_vazia() {
 
 int fila_int_cheia() {
   return u == N;
+
+}
+void imprime_fila(){
+
+    if(fila_int_vazia()){printf("Fila vazia!\n");return 0;}
+
+    int i=0;
+
+    printf("\n");
+    for(i=p;i<u;i++){printf("----");}
+    printf("\n");
+
+    for(i=p;i<u;i++){
+
+        printf("%d | ",fila_int[i]);
+
+    }
+
+    printf("\n");
+    for(i=p;i<u;i++){printf("----");}
+    printf("\n");
+
+    for(i=p;i<u;i++){
+        if(i==p){
+            printf("p   ");
+        }
+
+        else if(i==u-1){
+            printf("u");
+        }
+        else{
+           printf("    ");
+        }
+    }
+    printf("\n\n");
 
 }

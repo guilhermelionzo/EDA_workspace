@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1558286779 source:c:\users\guilherme\onedrive\documentos\programasc++\eda\eda_workspace\exer_2\fila int.c
+	<stdio.h>
+	"fila_int.h"
+
+1558285760 c:\users\guilherme\onedrive\documentos\programasc++\eda\eda_workspace\exer_2\fila_int.h
+
+1558288669 source:c:\users\guilherme\onedrive\documentos\programasc++\eda\eda_workspace\exer_2\main.c
+	<stdio.h>
+	<fila_int.h>
+

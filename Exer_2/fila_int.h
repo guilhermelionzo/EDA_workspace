@@ -6,5 +6,5 @@ void enfileira_int(int y);
 int desenfileira_int();
 int fila_int_vazia();
 int fila_int_cheia();
-
+void imprime_fila();
 #endif
