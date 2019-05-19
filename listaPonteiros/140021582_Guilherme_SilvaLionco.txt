@@ -1,7 +1,7 @@
 1. 
 	ptr++		;// o index do ponteiro será incrementado.  
-	(*ptr)++	;//	o valor do ponteiro será incrementado. 
-	*(ptr		;// usa o valor atual do ponteiro e depois incrementa o index.
+	(*ptr)++	;// o valor do ponteiro será incrementado. 
+	*(ptr++)	;// usa o valor atual do ponteiro e depois incrementa o index.
 	*(ptr+10)	;// usa o valor atual do ponteiro e depois incrementa o index em dez posições
 
 ===================================================================================================
@@ -9,12 +9,12 @@
 2.
 
 int main() {
-    //VARIABLES DECLARATING
+    //VARIABLES DECLARATION
     int y, *p, x;
     
     y = 0;		// y recebe o valor 0
     
-    p = &y;		// p 'aponta' para o endereço de y, sendo assim, qualquer mudaça em y será refletirá em p e vice-versa.
+    p = &y;		// p 'aponta' para o endereço de y, sendo assim, qualquer mudaça em y será refletida em p e vice-versa.
     
     x = *p;		// x recebe o valor de p , x recebe 0
     
@@ -24,7 +24,7 @@ int main() {
     
     x--;		// o valor de x é decrementado em uma unidade de int, x recebe 3
     
-    (*p) += x;	// o valor de p é somado ao valor de x, p recebe 1 + 3 = 4
+    (*p) += x;		// o valor de p é somado ao valor de x, p recebe 1 + 3 = 4
     
     printf ("y = %d\n", y); // printa o valor de y, mesmo valor de p, que é 4
     
@@ -41,11 +41,11 @@ int main() {
 
 void hm(int min, int *h,int *m){
 
-    if(0<=min&&min<60){				// se min for menor que 60, h=0 e m=min
+    if(0<=min&&min<60){					// se min for menor que 60, h=0 e m=min
         *h=0;
         *m=min;
     }
-    else if(60<=min){				// caso contrario h=min/60 e m=min-h*60
+    else if(60<=min){					// caso contrario h=min/60 e m=min-h*60
         *h = min/60;
         *m = min - (*h)*60;
     }
@@ -59,7 +59,7 @@ int main() {
 
     hm(min,&h,&m);					// passando min e endereço de h/m pela função 'hm'
 
-    printf("%d min = %dh e %dm\n",min,h,m);	// printando o valor '71 min = 1h e 11m'
+    printf("%d min = %dh e %dm\n",min,h,m);		// printando o valor '71 min = 1h e 11m'
 
     return 0;
 }
@@ -72,13 +72,13 @@ char* concat(char *str1,char *str2){
 
     int aux = 0;			//contador para armazenar o numero de indexes no array
 
-    while(*str1!='\n'){		//enquanto o valor do array for diferente de '\n' incremente o index
+    while(*str1!='\n'){			//enquanto o valor do array for diferente de '\n' incremente o index
         str1++;				//incrementa o index
         aux++;				//incrementa o contador
     }
 
-    while(*str2!='\n'){		//enquanto o valor do array for diferente de '\n' incremente o index
-        *str1=*str2;		//passa o valor do segundo array para o primeiro
+    while(*str2!='\n'){			//enquanto o valor do array for diferente de '\n' incremente o index
+        *str1=*str2;			//passa o valor do segundo array para o primeiro
         str1++;				//incrementa o index do primeiro array
         str2++;				//incrementa o index do segundo array
         aux++;				//incrementa o contador
