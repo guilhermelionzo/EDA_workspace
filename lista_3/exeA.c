@@ -33,7 +33,7 @@ Saída
 
 #define BUFFERSIZE 1000000
 
-#define DEBUG_SESSION 1
+#define DEBUG_SESSION 0
 
 #ifdef DEBUG_SESSION
     #define PRINT 1
@@ -47,36 +47,66 @@ int main()
 {
     int numberOfVectorPositions;
     char buffer[BUFFERSIZE];
+    int notas[101]={0};
 
-    while(1){
+        int g,a,i,G[20],A[20],maior,mm;
 
         //VECTOR NUMBER INPUT
         if(DEBUG_SESSION){printf("Digite o numero de valores do vetor:\n");}
-        scanf("%d",&numberOfVectorPositions);
+        convert_input(G,gets(buffer));
+        numberOfVectorPositions=G[0];
 
-        if(numberOfVectorPositions==NULL){break;} //in case of EOF, break
+        if(numberOfVectorPositions==NULL){return 0;} //in case of EOF, break
 
         //VECTOR VALUES INPUT
         if(DEBUG_SESSION){printf("Digite os valores do vetor:\n");}
-        scanf("%s",&buffer);
+        gets(buffer);
 
+        g=convert_input(G,buffer);
+        i=0;
 
+        while(i<g+1){
 
-        int *gradesVector;
+            //if(DEBUG_SESSION){printf("%d\n",G[i]);}
+            notas[G[i]]++;
+            i++;
+        }
 
-        gradesVector=malloc(numberOfVectorPositions*sizeof(int));
+        i=0;
+        maior=0;
+        mm=0;
 
-        //for(int i=0;i<gradesVector;i++){
+        while(i<=100){
 
+            if(maior<notas[i]){
+                maior = notas[i];
+                mm=i;
+            }
+            //if(DEBUG_SESSION){printf("%d\n",notas[i]);}
+            i++;
+        }
 
-        //}
-
-        if(DEBUG_SESSION){printf("%s\n",buffer);}
-
-
-    if(DEBUG_SESSION){printf("Digite o numero de vetores:\n");}
-
-    }
+        printf("%d",mm);
 
     return 0;
 }
+
+int convert_input(int K[],char string[200])
+{
+    int j=0,i=0,temp=0;
+
+    while(string[i]!='\0')
+    {
+        temp=0;
+        while(string[i]!=' ' && string[i]!='\0')
+            temp=temp*10 + (string[i++]-'0') ;
+        if(string[i]==' ')
+            i++;
+        K[j++]=temp;
+    }
+
+    return j-1;
+}
+
+
+
