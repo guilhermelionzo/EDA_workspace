@@ -1,0 +1,62 @@
+FILA COM LISTA ENCADEADA
+
+typedef struct elem{
+  
+  int dado;
+  struct elem *prox;
+  
+}celula;
+
+int cria_fila(){
+  
+  celula *fila;
+  fila = malloc(sizeof(celula));
+  
+  if(fila=NULL){return 0;}
+  
+  fila->prox=fila;
+  
+  fila->prox = fila;
+  
+  return 1;
+}
+
+int desenfileira(int *elem){
+  
+  celula *p;
+  
+  if(!fila_vazia()){
+    
+    p=fila->prox;
+   
+    *elem=p->dado;
+    
+    fila->prox=p=>prox;
+    
+    free(p);
+    
+    return 1;
+  }
+  
+  return 0;
+  
+}
+
+int enfileira(int elem){
+  
+  celula *nova;
+  
+  nova=malloc(sizeof(celula));
+  
+  if(nova==NULL){return 0;}
+  
+  nova->prox=fila->prox;
+  
+  fila->prox=nova;
+  
+  fila->dado=elem;
+  
+  fila=nova;
+  
+  return 1;
+}
