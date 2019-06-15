@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "fila_int.h"
-#define N 100
+#define N 10
 
 static int fila_int[N];
 static int p, u;
@@ -15,6 +15,7 @@ void enfileira_int(int y) {
 }
 
 int desenfileira_int() {
+
   return fila_int[p++];
 }
 
@@ -25,7 +26,7 @@ int fila_int_vazia() {
 }
 
 int fila_int_cheia() {
-  return u == N;
+  return (u-p)== N;
 
 }
 void imprime_fila_int(){

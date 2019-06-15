@@ -10,7 +10,9 @@
     2->ENCADEADA CIRCULAR
 */
 
-#define QUEUE_TYPE QUEUE_SIZED
+/******SELECT HERE******/
+#define QUEUE_TYPE QUEUE_RESIZED
+/***********************/
 
 #if QUEUE_TYPE == QUEUE_SIZED
     #include "fila_int.h"
@@ -65,6 +67,7 @@ void main_sized(void){
     while(1){
 
     //Application Menu
+    printf("\n****FILA DE VETOR COM TAMANHO FIXO****");
     printf("\nMENU:\n[1].Inserir n elementos na fila.\n[2].Remover n elementos na fila.\n[3].Reiniciar a fila.\n[4].Imprimir a fila.\n[5].Sair.\n");
 
     //read the use user choice
@@ -89,6 +92,11 @@ void main_sized(void){
             else{
                 printf("Digite o usuario numero %d: ",i+1);
                 user=-1;
+
+                if(fila_int_cheia()){
+                    printf("A fila esta cheia. Por favor, remova alguns elementos para adicionar novos!\n");
+                    break;
+                }
                 while((user<0)||(user>999)){
                     scanf("%d",&user);
 
@@ -103,14 +111,17 @@ void main_sized(void){
 
     //Remover n elementos na fila.
     if(intBuffer==2){
+        if(fila_int_vazia()){printf("A fila esta vazia!\n");}
 
-        printf("Digite o numero de elementos a serem removidos: ");
-        scanf("%d",&user);
+        else{
+            printf("Digite o numero de elementos a serem removidos: ");
+            scanf("%d",&user);
 
-        int i=0;
+            int i=0;
 
-        for(i=0;i<user;i++){
-            printf("Elemento removido: %d\n",desenfileira_int());
+            for(i=0;i<user;i++){
+                printf("Elemento removido: %d\n",desenfileira_int());
+            }
         }
     }
 
@@ -132,5 +143,99 @@ void main_sized(void){
     if(intBuffer==5){return 0;}
 
   }
+
+}
+
+/*
+MAIN THAT USES RESIZED QUEUE
+*/
+void main_resized(void){
+
+    int intBuffer=0;
+    int userNumber=0;
+    int user=0;
+
+    cria_fila_rsz();
+
+    while(1){
+
+    //Application Menu
+    printf("\n****FILA CIRCULAR COM REDIMENSIONAMENTO****");
+    printf("\nMENU:\n[1].Inserir n elementos na fila.\n[2].Remover n elementos na fila.\n[3].Reiniciar a fila.\n[4].Imprimir a fila.\n[5].Sair.\n");
+
+    //read the use user choice
+    scanf("%d",&intBuffer);
+
+    system("cls");
+
+    //Inserir n elementos na fila.
+    if(intBuffer==1){
+
+        printf("Quantos elementos deseja inserir: ");
+        scanf("%d",&userNumber);
+
+        int i=0;
+
+        for(i=0;i<userNumber;i++){
+
+                printf("Digite o usuario numero %d: ",i+1);
+                user=-1;
+
+                while((user<0)||(user>999)){
+                    scanf("%d",&user);
+
+                    if((user<0)||(user>999)){printf("Os usuarios devem estar entre 0 e 999!\n");printf("Digite o usuario numero %d: ",i+1);}
+
+                    else{enfileira_rsz(user);}
+
+                }
+
+        }
+    }
+
+    //Remover n elementos na fila.
+    if(intBuffer==2){
+        if(fila_rsz_vazia()){printf("A fila esta vazia!\n");}
+
+        else{
+
+            printf("Digite o numero de elementos a serem removidos: ");
+            scanf("%d",&user);
+
+            int i=0;
+
+            for(i=0;i<user;i++){
+
+                int removedUser =0;
+                desenfileira_rsz(&removedUser);
+
+                printf("Elemento removido: %d\n",removedUser);
+            }
+        }
+    }
+    //Reiniciar a fila.
+    if(intBuffer==3){
+
+        if(fila_rsz_vazia()){printf("A fila ja estava vazia!\n");}
+
+        else{
+            libera_fila_rsz();
+
+            printf("Fila reiniciada com sucesso!\n");
+        }
+
+    }
+
+    //Imprimir a fila
+    if(intBuffer==4){
+        imprime_fila_rsz();
+    }
+
+    //Sair.
+    if(intBuffer==5){return 0;}
+
+    if(intBuffer==6){printf("tamanho fila:%d\n",tam_fila_rsz());}
+  }
+
 
 }
