@@ -1,36 +1,95 @@
 #include <stdio.h>
 #include "fila_encadeada.h"
-#define N 100
+#define N 10
 
-static int fila_enc[N];
-static int p, u;
+int u,p;
 
-void cria_fila_enc() {
-  p = 0;
-  u = 0;
+typedef struct elem{
+
+    int dado;
+    struct elem *prox;
+
+}celula;
+
+celula *fila_enc;
+
+int cria_fila_enc(){
+
+    u=0;
+    p=0;
+
+    //celula *fila_enc;
+    fila_enc = malloc(sizeof(celula));
+
+    if(fila_enc=NULL){return 0;}
+
+    fila_enc->prox=NULL;//fila_enc;
+
+  return 1;
 }
 
-void enfileira_enc(int y) {
-  fila_enc[u++]= y;
+int desenfileira_enc(int *elem){
+
+    celula *temp;
+
+    if(!fila_vazia_enc()){
+
+        temp=fila_enc->prox;
+
+        *elem=temp->dado;
+
+        fila_enc->prox=temp->prox;
+
+        free(temp);
+
+        return 1;
+        p++;
+    }
+
+    return 0;
+
 }
 
-int desenfileira_enc() {
-  return fila_enc[p++];
+int enfileira_enc(int elem){
+
+    celula *nova;
+
+    u++;
+
+    nova=malloc(sizeof(celula));
+
+    if(nova==NULL){return 0;}
+
+    nova->prox=fila_enc->prox;
+
+    fila_enc->prox=nova;
+
+    fila_enc->dado=elem;
+
+    fila_enc=nova;
+
+    return 1;
 }
 
-int fila_enc_vazia() {
-  if ( p == u ) cria_fila_enc();
-  return p == u;
+int fila_cheia_enc(){
+
+    return 0;
 
 }
 
-int fila_enc_cheia() {
-  return u == N;
+int fila_vazia_enc(void){
 
+    return (u=p);
 }
+
+int fila_tamanho_enc(){
+
+    return (u-p);
+}
+
 void imprime_fila_enc(){
 
-    if(fila_enc_vazia()){printf("Fila vazia!\n");return 0;}
+    if(fila_vazia_enc()){printf("Fila vazia!\n");return 0;}
 
     int i=0;
 
@@ -38,10 +97,18 @@ void imprime_fila_enc(){
     for(i=p;i<u;i++){printf("----");}
     printf("\n");
 
+    celula *temp,*temp_enc;
+    temp=malloc(sizeof(celula));
+    temp_enc=malloc(sizeof(celula));
+    temp_enc=fila_enc;
+
     for(i=p;i<u;i++){
 
-        printf("%d | ",fila_enc[i]);
+        temp=temp_enc;
 
+        printf("%d | ",temp->dado);
+
+        temp= fila_enc->prox;
     }
 
     printf("\n");
@@ -63,3 +130,4 @@ void imprime_fila_enc(){
     printf("\n\n");
 
 }
+

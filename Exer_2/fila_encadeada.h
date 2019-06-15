@@ -1,10 +1,12 @@
 #ifndef _fila_encadeada_h
 #define _fila_encadeada_h
 
-void cria_fila_enc();
-void enfileira_enc(int y);
-int desenfileira_enc();
-int fila_enc_vazia();
-int fila_enc_cheia();
+int cria_fila_enc();
+int enfileira_enc(int elem);
+int desenfileira_enc(int *elem);
+int fila_cheia_enc();
+int fila_vazia_enc(void);
+int fila_tamanho_enc();
 void imprime_fila_enc();
+
 #endif
