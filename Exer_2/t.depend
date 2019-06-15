@@ -3,9 +3,27 @@
 	<stdio.h>
 	"fila_int.h"
 
-1558285760 c:\users\guilherme\onedrive\documentos\programasc++\eda\eda_workspace\exer_2\fila_int.h
+1560600957 c:\users\guilherme\onedrive\documentos\programasc++\eda\eda_workspace\exer_2\fila_int.h
 
-1558288669 source:c:\users\guilherme\onedrive\documentos\programasc++\eda\eda_workspace\exer_2\main.c
+1560600913 source:c:\users\guilherme\onedrive\documentos\programasc++\eda\eda_workspace\exer_2\main.c
 	<stdio.h>
-	<fila_int.h>
+	"fila_int.h"
+	"fila_resize.h"
+	"fila_encadeada.h"
+
+1560600932 source:c:\users\guilherme\onedrive\documentos\programasc++\eda\eda_workspace\exer_2\fila_int.c
+	<stdio.h>
+	"fila_int.h"
+
+1560600977 source:c:\users\guilherme\onedrive\documentos\programasc++\eda\eda_workspace\exer_2\fila_resize.c
+	<stdio.h>
+	"fila_resize.h"
+
+1560600975 c:\users\guilherme\onedrive\documentos\programasc++\eda\eda_workspace\exer_2\fila_resize.h
+
+1560600997 c:\users\guilherme\onedrive\documentos\programasc++\eda\eda_workspace\exer_2\fila_encadeada.h
+
+1560600994 source:c:\users\guilherme\onedrive\documentos\programasc++\eda\eda_workspace\exer_2\fila_encadeada.c
+	<stdio.h>
+	"fila_encadeada.h"
 

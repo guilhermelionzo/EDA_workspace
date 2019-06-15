@@ -1,36 +1,36 @@
 #include <stdio.h>
-#include "fila_int.h"
+#include "fila_encadeada.h"
 #define N 100
 
-static int fila_int[N];
+static int fila_enc[N];
 static int p, u;
 
-void cria_fila_int() {
+void cria_fila_enc() {
   p = 0;
   u = 0;
 }
 
-void enfileira_int(int y) {
-  fila_int[u++]= y;
+void enfileira_enc(int y) {
+  fila_enc[u++]= y;
 }
 
-int desenfileira_int() {
-  return fila_int[p++];
+int desenfileira_enc() {
+  return fila_enc[p++];
 }
 
-int fila_int_vazia() {
-  if ( p == u ) cria_fila_int();
+int fila_enc_vazia() {
+  if ( p == u ) cria_fila_enc();
   return p == u;
 
 }
 
-int fila_int_cheia() {
+int fila_enc_cheia() {
   return u == N;
 
 }
-void imprime_fila(){
+void imprime_fila_enc(){
 
-    if(fila_int_vazia()){printf("Fila vazia!\n");return 0;}
+    if(fila_enc_vazia()){printf("Fila vazia!\n");return 0;}
 
     int i=0;
 
@@ -40,7 +40,7 @@ void imprime_fila(){
 
     for(i=p;i<u;i++){
 
-        printf("%d | ",fila_int[i]);
+        printf("%d | ",fila_enc[i]);
 
     }
 

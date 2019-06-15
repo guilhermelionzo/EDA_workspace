@@ -1,5 +1,28 @@
 #include <stdio.h>
-#include <fila_int.h>
+
+#define QUEUE_SIZED     0
+#define QUEUE_RESIZED   1
+#define QUEUE_CHAIN     2
+
+/* TIPO DE FILA
+    0->TAMANHO FIXO
+    1->COM REDIMENSIONAMENTO
+    2->ENCADEADA CIRCULAR
+*/
+
+#define QUEUE_TYPE QUEUE_SIZED
+
+#if QUEUE_TYPE == QUEUE_SIZED
+    #include "fila_int.h"
+
+#elif QUEUE_TYPE == QUEUE_RESIZED
+    #include "fila_resize.h"
+
+#elif QUEUE_TYPE  == QUEUE_CHAIN
+    #include "fila_encadeada.h"
+#else
+    #error Include not supported! Please, change the QUEUE_TYPE
+#endif // QUEUE_TYPE
 
 //Inserir n elementos na fila.
 
@@ -11,14 +34,35 @@
 
 //Sair
 
+void main_sized(void);
+void main_resized(void);
+void main_chain(void);
+
 int main(void){
 
-  int intBuffer=0;
-  int userNumber=0;
-  int user=0;
-  cria_fila_int();
+    if(QUEUE_TYPE==QUEUE_SIZED){
+        main_sized();
+    }
+    else if(QUEUE_TYPE==QUEUE_RESIZED){
+        main_resized();
+    }
 
-  while(1){
+    if(QUEUE_TYPE==QUEUE_CHAIN){
+        main_chain();
+    }
+}
+/*
+MAIN THAT USES SIZED QUEUE
+*/
+void main_sized(void){
+
+    int intBuffer=0;
+    int userNumber=0;
+    int user=0;
+
+    cria_fila_int();
+
+    while(1){
 
     //Application Menu
     printf("\nMENU:\n[1].Inserir n elementos na fila.\n[2].Remover n elementos na fila.\n[3].Reiniciar a fila.\n[4].Imprimir a fila.\n[5].Sair.\n");
@@ -48,7 +92,7 @@ int main(void){
                 while((user<0)||(user>999)){
                     scanf("%d",&user);
 
-                    if((user<0)||(user>999)){printf("Os usuarios devem estar entre 0 e 999!\n");}
+                    if((user<0)||(user>999)){printf("Os usuarios devem estar entre 0 e 999!\n");printf("Digite o usuario numero %d: ",i+1);}
 
                     else{enfileira_int(user);}
 
@@ -81,7 +125,7 @@ int main(void){
 
     //Imprimir a fila
     if(intBuffer==4){
-        imprime_fila();
+        imprime_fila_int();
     }
 
     //Sair.
