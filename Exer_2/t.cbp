@@ -31,10 +31,18 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="fila int.c">
+		<Unit filename="fila_encadeada.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fila_encadeada.h" />
+		<Unit filename="fila_int.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="fila_int.h" />
+		<Unit filename="fila_resize.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fila_resize.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

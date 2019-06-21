@@ -49,6 +49,11 @@ void imprime_fila_int(){
     for(i=p;i<u;i++){printf("----");}
     printf("\n");
 
+    if(p==(u-1)){
+        printf("p/u");
+    }
+    else{
+
     for(i=p;i<u;i++){
         if(i==p){
             printf("p   ");
@@ -60,6 +65,7 @@ void imprime_fila_int(){
         else{
            printf("    ");
         }
+    }
     }
     printf("\n\n");
 

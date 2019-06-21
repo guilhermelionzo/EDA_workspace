@@ -24,7 +24,9 @@
     #include "fila_encadeada.h"
 #else
     #error Include not supported! Please, change the LIST_TYPE
-#endif // LIST_TYPE
+#endif
+
+// LIST_TYPE
 
 //Inserir n elementos na fila.
 
@@ -53,6 +55,8 @@ int main(void){
         main_chain();
     }
 }
+
+
 /*
 MAIN THAT USES SIZED LIST
 */
@@ -243,6 +247,7 @@ void main_resized(void){
 /*
 MAIN THAT USES CHAIN LIST
 */
+
 void main_chain(void){
 
     int intBuffer=0;
@@ -313,7 +318,7 @@ void main_chain(void){
         if(fila_vazia_enc()){printf("A fila ja estava vazia!\n");}
 
         else{
-            libera_fila_rsz();
+            libera_fila_enc();
 
             printf("Fila reiniciada com sucesso!\n");
         }
@@ -333,4 +338,3 @@ void main_chain(void){
 
 
 }
-

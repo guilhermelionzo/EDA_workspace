@@ -5,25 +5,32 @@
 
 1560600957 c:\users\guilherme\onedrive\documentos\programasc++\eda\eda_workspace\exer_2\fila_int.h
 
-1560614653 source:c:\users\guilherme\onedrive\documentos\programasc++\eda\eda_workspace\exer_2\main.c
+1561122464 source:c:\users\guilherme\onedrive\documentos\programasc++\eda\eda_workspace\exer_2\main.c
 	<stdio.h>
 	"fila_int.h"
 	"fila_resize.h"
 	"fila_encadeada.h"
 
-1560604411 source:c:\users\guilherme\onedrive\documentos\programasc++\eda\eda_workspace\exer_2\fila_int.c
+1561124187 source:c:\users\guilherme\onedrive\documentos\programasc++\eda\eda_workspace\exer_2\fila_int.c
 	<stdio.h>
 	"fila_int.h"
 
-1560609557 source:c:\users\guilherme\onedrive\documentos\programasc++\eda\eda_workspace\exer_2\fila_resize.c
+1561124168 source:c:\users\guilherme\onedrive\documentos\programasc++\eda\eda_workspace\exer_2\fila_resize.c
 	<stdio.h>
 	"fila_resize.h"
 
 1560605330 c:\users\guilherme\onedrive\documentos\programasc++\eda\eda_workspace\exer_2\fila_resize.h
 
-1560614224 c:\users\guilherme\onedrive\documentos\programasc++\eda\eda_workspace\exer_2\fila_encadeada.h
+1561122626 c:\users\guilherme\onedrive\documentos\programasc++\eda\eda_workspace\exer_2\fila_encadeada.h
 
-1560614736 source:c:\users\guilherme\onedrive\documentos\programasc++\eda\eda_workspace\exer_2\fila_encadeada.c
+1561124118 source:c:\users\guilherme\onedrive\documentos\programasc++\eda\eda_workspace\exer_2\fila_encadeada.c
 	<stdio.h>
 	"fila_encadeada.h"
+
+1561122496 source:c:\users\guilherme\onedrive\documentos\programasc++\eda\eda_workspace\exer_2\enc.c
+	"enc.h"
+
+1561120098 c:\users\guilherme\onedrive\documentos\programasc++\eda\eda_workspace\exer_2\enc.h
+	"stdio.h"
+	"stdlib.h"
 

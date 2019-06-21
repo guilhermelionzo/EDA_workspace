@@ -3,83 +3,99 @@
 #define N 10
 
 int u,p;
+Fila* f;
 
-typedef struct elem{
+struct no
+{
+    int data;
+    struct no* prox;
+};
+typedef struct no No;
 
-    int dado;
-    struct elem *prox;
+struct fila
+{
+    No* ini;
+    No* fim;
+};
 
-}celula;
-
-celula *fila_enc;
-
-int cria_fila_enc(){
-
+int cria_fila_enc(void)
+{
     u=0;
     p=0;
 
-    //celula *fila_enc;
-    fila_enc = malloc(sizeof(celula));
-
-    if(fila_enc=NULL){return 0;}
-
-    fila_enc->prox=NULL;//fila_enc;
-
-  return 1;
+    f = (Fila*) malloc(sizeof(Fila));
+    f->ini = f->fim = NULL;
+    return 1;
 }
 
-int desenfileira_enc(int *elem){
+/* função auxiliar: enfileira_enc no fim */
+No* ins_fim(No* fim, int v)
+{
+    No* p = (No*) malloc(sizeof(No));
+    p->data = v;
+    p->prox = NULL;
 
-    celula *temp;
-
-    if(!fila_vazia_enc()){
-
-        temp=fila_enc->prox;
-
-        *elem=temp->dado;
-
-        fila_enc->prox=temp->prox;
-
-        free(temp);
-
-        return 1;
-        p++;
-    }
-
-    return 0;
-
+    if (fim != NULL) /* verifica se lista não estava vazia */
+        fim->prox = p;
+    return p;
+}
+/* função auxiliar: retira do início */
+No* desen_ini(No* ini)
+{
+    No* p = ini->prox;
+    free(ini);
+    return p;
 }
 
-int enfileira_enc(int elem){
-
-    celula *nova;
-
+int enfileira_enc(int v)
+{
+    f->fim = ins_fim(f->fim, v);
+    if (f->ini == NULL) /* fila antes vazia? */
+        f->ini = f->fim;
     u++;
+    return 1;
+}
 
-    nova=malloc(sizeof(celula));
+int fila_vazia_enc()
+{
+    return (p==u);
+}
 
-    if(nova==NULL){return 0;}
+int desenfileira_enc(int *v)
+{
+    if (fila_vazia_enc())
+    {
+        printf("Fila vazia.\n");
+        exit(1); /* aborta programa */
+    }
+    *v = f->ini->data;
+    f->ini = desen_ini(f->ini);
+    if (f->ini == NULL) /* fila ficou vazia? */
+        f->fim = NULL;
 
-    nova->prox=fila_enc->prox;
-
-    fila_enc->prox=nova;
-
-    fila_enc->dado=elem;
-
-    fila_enc=nova;
-
+    p++;
     return 1;
 }
 
 int fila_cheia_enc(){
 
-    return 0;
+    return 0; // a fila nunca estará cheia, apenas se nao houver memoria para alocar os dados
 
 }
 
-int fila_vazia_enc(void){
+void libera_fila_enc()
+{
+    No* q = f->ini;
+    while (q != NULL)
+    {
+        No* t = q->prox;
+        free(q);
+        q = t;
+    }
+    u=0;
+    p=0;
 
-    return (u=p);
+    free(f);
 }
 
 int fila_tamanho_enc(){
@@ -97,25 +113,23 @@ void imprime_fila_enc(){
     for(i=p;i<u;i++){printf("----");}
     printf("\n");
 
-    celula *temp,*temp_enc;
-    temp=malloc(sizeof(celula));
-    temp_enc=malloc(sizeof(celula));
-    temp_enc=fila_enc;
+    No* q;
 
-    for(i=p;i<u;i++){
+    for(q = f->ini;q != NULL; q = q->prox){
 
-        temp=temp_enc;
+        printf("%d | ",q->data);
 
-        printf("%d | ",temp->dado);
-
-        temp= fila_enc->prox;
     }
 
     printf("\n");
     for(i=p;i<u;i++){printf("----");}
     printf("\n");
 
-    for(i=p;i<u;i++){
+    if(p==(u-1)){
+        printf("p/u");
+    }
+    else{
+        for(i=p;i<u;i++){
         if(i==p){
             printf("p   ");
         }
@@ -127,6 +141,8 @@ void imprime_fila_enc(){
            printf("    ");
         }
     }
+    }
+
     printf("\n\n");
 
 }
