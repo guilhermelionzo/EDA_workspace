@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1561210321 source:c:\users\alunos\desktop\trabalho_filas\fila_int\main.c
+	<stdio.h>
+	"fila_int.h"
+	"fila_int.h"
+	"fila_resize.h"
+	"fila_encadeada.h"
+
+1561209988 c:\users\alunos\desktop\trabalho_filas\fila_int\fila_int.h
+
+1561209931 source:c:\users\alunos\desktop\trabalho_filas\fila_int\fila_int.c
+	<stdio.h>
+	"fila_int.h"
+

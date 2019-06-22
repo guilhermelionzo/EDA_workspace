@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1561211002 source:c:\users\alunos\desktop\trabalho_filas\fila_resized\main.c
+	<stdio.h>
+	"fila_resize.h"
+	"fila_int.h"
+	"fila_resize.h"
+	"fila_encadeada.h"
+
+1561210982 c:\users\alunos\desktop\trabalho_filas\fila_resized\fila_resize.h
+
+1561211031 source:c:\users\alunos\desktop\trabalho_filas\fila_resized\fila_resize.c
+	<stdio.h>
+	"fila_resize.h"
+
