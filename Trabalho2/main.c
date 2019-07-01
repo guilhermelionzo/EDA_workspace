@@ -43,32 +43,37 @@ int main(void) {
 	fflush(stdout);
 	#endif
 
+	//READ THE EXPRESSION
 	scanf("%s", buffer);
 
 	int returnValue;
 	int i = 0;
 
+	//WHILE THE CODE DON'T REACHT THE FINAL ELEMENT, CHECK THE CONSISTENCY OF THE EXPRESSION
 	while (buffer[i] != '\0') {
 
-		returnValue = checkExpression(buffer[i]);
+		returnValue = checkExpression(buffer[i]);	//CHECK EACH ELEMENT IN THE EXPRESSION
 
 		if (returnValue == DISMATCH) {
-			printf("nao\n");
-			return DISMATCH;
+			printf("nao\n");			//IF THERE IS ANY INCONSISTENCY IN THE EXPRESSION, PRINT 'nao'
+			return DISMATCH;			//RETURN 0
 		}
 		i++;
 	}
 
-	isEmpty() ? printf("sim\n") : printf("nao\n");
+	isEmpty() ? printf("sim\n") : printf("nao\n");	//IF THE STACK IS EMPTY, RETURN 'sim', OTHERWISE 'nao'
 
-	free(buffer);
+	//free(buffer);
 
 	return 0;
 }
-
+/*
+ * CHECK WHETHER ELEMENT IS CONSISTNECY
+ */
 int checkExpression(char textText) {
 
 	char temp;
+
 
 	if ((textText == inCaracters[0]) || (textText == inCaracters[1])
 			|| (textText == inCaracters[2])) {
@@ -94,11 +99,17 @@ int checkExpression(char textText) {
 	return CHECK_NA;
 }
 
+/*
+ * PUT THE ELEMENT IN THE STACK
+ */
 void push( char ch)
 {
 	elements[ ++top] = ch;
 }
 
+/*
+ * GET THE ELEMENT FROM THE STACK
+ */
 int pop(char *value)
 {
 	if(isEmpty()){
@@ -108,17 +119,23 @@ int pop(char *value)
 	}
 	return 1;
 }
-
+/*
+ * CHECK WHETHER THE STACK IS EMPTY
+ */
 int isEmpty()
 {
 	return top == EMPTY;
 }
-
+/*
+ * CHECK WHETHER THE STACK IS FULL
+ */
 int isFull()
 {
 	return top == STACK_SIZE - 1;
 }
-
+/*
+ * PRINT THE STACK DATA
+ */
 int print(){
 
     if(isEmpty()){return 0;}
