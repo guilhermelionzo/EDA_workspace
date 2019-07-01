@@ -8,5 +8,6 @@ int fila_vazia();
 int fila_cheia();
 void imprime_fila();
 void libera_fila();
+void cabecalho(void);
 
 #endif

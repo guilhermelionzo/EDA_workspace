@@ -2,8 +2,8 @@
 #include "fila_encadeada.h"
 #define N 10
 
-int u,p;
-Fila* f;
+static int u,p;
+static Fila* f;
 
 struct no
 {
@@ -18,17 +18,16 @@ struct fila
     No* fim;
 };
 
-int cria_fila_enc(void)
+void cria_fila(void)
 {
     u=0;
     p=0;
 
     f = (Fila*) malloc(sizeof(Fila));
     f->ini = f->fim = NULL;
-    return 1;
 }
 
-/* função auxiliar: enfileira_enc no fim */
+/* função auxiliar: enfileira no fim */
 No* ins_fim(No* fim, int v)
 {
     No* p = (No*) malloc(sizeof(No));
@@ -47,7 +46,7 @@ No* desen_ini(No* ini)
     return p;
 }
 
-int enfileira_enc(int v)
+int enfileira(int v)
 {
     f->fim = ins_fim(f->fim, v);
     if (f->ini == NULL) /* fila antes vazia? */
@@ -56,14 +55,14 @@ int enfileira_enc(int v)
     return 1;
 }
 
-int fila_vazia_enc()
+int fila_vazia()
 {
     return (p==u);
 }
 
-int desenfileira_enc(int *v)
+int desenfileira(int *v)
 {
-    if (fila_vazia_enc())
+    if (fila_vazia())
     {
         printf("Fila vazia.\n");
         exit(1); /* aborta programa */
@@ -77,13 +76,13 @@ int desenfileira_enc(int *v)
     return 1;
 }
 
-int fila_cheia_enc(){
+int fila_cheia(){
 
     return 0; // a fila nunca estará cheia, apenas se nao houver memoria para alocar os dados
 
 }
 
-void libera_fila_enc()
+void libera_fila()
 {
     No* q = f->ini;
     while (q != NULL)
@@ -98,14 +97,14 @@ void libera_fila_enc()
     free(f);
 }
 
-int fila_tamanho_enc(){
+int fila_tamanho(){
 
     return (u-p);
 }
 
-void imprime_fila_enc(){
+void imprime_fila(){
 
-    if(fila_vazia_enc()){printf("Fila vazia!\n");return 0;}
+    if(fila_vazia()){printf("Fila vazia!\n");return 0;}
 
     int i=0;
 
@@ -146,6 +145,7 @@ void imprime_fila_enc(){
     printf("\n\n");
 
 }
-void cabecalho(){
+
+void cabecalho(void){
     printf("\n****FILA DE LISTA ENCADEADA CIRCULAR****");
 }

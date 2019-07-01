@@ -41,7 +41,7 @@
 void main_sized(void);
 void main_resized(void);
 void main_chain(void);
-
+char[]=
 int main(void){
 
     if(LIST_TYPE==LIST_SIZED){
@@ -164,7 +164,7 @@ void main_resized(void){
     while(1){
 
     //Application Menu
-    printf("\n****FILA CIRCULAR COM REDIMENSIONAMENTO****");
+
     printf("\nMENU:\n[1].Inserir n elementos na fila.\n[2].Remover n elementos na fila.\n[3].Reiniciar a fila.\n[4].Imprimir a fila.\n[5].Sair.\n");
 
     //read the use user choice

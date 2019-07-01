@@ -146,3 +146,6 @@ void imprime_fila(){
 
 }
 
+void cabecalho(void){
+    printf("\n****FILA DE LISTA ENCADEADA CIRCULAR****");
+}

@@ -86,5 +86,5 @@ void libera_fila(){
 }
 void cabecalho(void){
     printf("\n****FILA DE VETOR COM TAMANHO FIXO****");
-
+    
 }

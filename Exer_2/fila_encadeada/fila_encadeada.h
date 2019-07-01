@@ -10,5 +10,6 @@ int fila_tamanho();
 void imprime_fila();
 void libera_fila();
 typedef struct fila Fila;
+void cabecalho(void);
 
 #endif

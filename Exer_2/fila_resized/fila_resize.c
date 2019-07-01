@@ -146,3 +146,7 @@ void libera_fila() {
     p=0;
     free(fila);
 }
+
+void cabecalho(void){
+    printf("\n****FILA CIRCULAR COM REDIMENSIONAMENTO****");
+}

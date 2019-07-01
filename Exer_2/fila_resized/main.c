@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "fila_resize.h"
+#include "fila_encadeada.h"
 
 #define SUCESSO     1
 #define FALHA       0
@@ -18,7 +18,7 @@
 */
 
 /******SELECT HERE******/
-#define LIST_TYPE LIST_RESIZED
+#define LIST_TYPE LIST_CHAIN
 /***********************/
 
 #if LIST_TYPE == LIST_SIZED
@@ -30,20 +30,8 @@
 #elif LIST_TYPE  == LIST_CHAIN
     #include "fila_encadeada.h"
 #else
-    #error Include not supported! Please, change the LIST_TYPE
+    #error Include not supported! Please, change the LIST_TYPE define and run again.
 #endif
-
-// LIST_TYPE
-
-//Inserir n elementos na fila.
-
-//.Remover n elementos na fila.
-
-//Reiniciar a fila
-
-//Imprimir a fila.
-
-//Sair
 
 
 /*
@@ -60,7 +48,8 @@ int main(void){
     while(1){
 
     //Application Menu
-    printf("\n****FILA DE VETOR COM TAMANHO FIXO****");
+      
+    cabecalho();
     printf("\nMENU:\n[1].Inserir n elementos na fila.\n[2].Remover n elementos na fila.\n[3].Reiniciar a fila.\n[4].Imprimir a fila.\n[5].Sair.\n");
 
     //read the use user choice

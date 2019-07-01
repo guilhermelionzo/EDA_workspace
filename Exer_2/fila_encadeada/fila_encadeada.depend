@@ -12,3 +12,16 @@
 	"fila_resize.h"
 	"fila_encadeada.h"
 
+1561259299 source:c:\users\guilherme\onedrive\documentos\programasc++\eda\eda_workspace\exer_2\fila_encadeada\fila_encadeada.c
+	<stdio.h>
+	"fila_encadeada.h"
+
+1561259297 c:\users\guilherme\onedrive\documentos\programasc++\eda\eda_workspace\exer_2\fila_encadeada\fila_encadeada.h
+
+1561259531 source:c:\users\guilherme\onedrive\documentos\programasc++\eda\eda_workspace\exer_2\fila_encadeada\main.c
+	<stdio.h>
+	"fila_encadeada.h"
+	"fila_int.h"
+	"fila_resize.h"
+	"fila_encadeada.h"
+
